@@ -1,68 +1,36 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## 웹 클라이언트
 
-In the project directory, you can run:
+아임포트 예제 웹 클라이언트 입니다.
 
-### `npm start`
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## 라이브러리 선택
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+아임포트에서 공식적으로 제공하는 결재 요청 라이브러리는 jQuery 기반의 라이브러리인데,
+React와 함께 사용시 프로젝트와 비교적 덜 깔끌하게 합쳐지는 이슈가 있기 때문에
+아래와 같이 리액트 컴포넌트로 포팅 된 것을 사용해도 된다.
+그렇지만 라이브러리 성숙도가 문제가 될 수 있다.
+해당 프로젝트는 공식 라이브러리로 진행했음.
 
-### `npm test`
+- [react-iamport](https://www.npmjs.com/package/react-iamport)
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 라이브러리 설치
 
-### `npm run build`
+`index.html` 에 라이브러리 추가
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```javascript
+<!-- jQuery -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+<!-- 아임포트 공식 라이브러리 -->
+<script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
 
-### `npm run eject`
+## PaymentButton 컴포넌트
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+해당 컴포넌트의 주 기능은 아래의 두 가지
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- 가맹점 식별코드 설정
+- 버튼 클릭시 결제 요청
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
