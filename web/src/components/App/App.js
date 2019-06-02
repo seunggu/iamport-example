@@ -1,12 +1,22 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      
-    </div>
-  );
-}
+export default class App extends Component {
+  
+  componentDidMount() {
+    this.initIamportId();
+  }
 
-export default App;
+  initIamportId = () => {
+    const IMP = window.IMP;
+    const iamportId = process.env.IAMPORT_ID;
+    IMP.init(iamportId);
+  }
+
+  render() {
+    return (
+      <div className="App">
+      </div>
+    );
+  }
+}
