@@ -1,14 +1,14 @@
 const express = require('express');
 const bodyparser = require('simple-bodyparser');
 
+const setRouter = require('./routers')
+
 const app = express();
 
 // middlewares
 app.use(bodyparser());
 
 // routers
-app.get('/', (req, res) => {
-  res.send('Hello');
-});
+setRouter(app);
 
 module.exports = app;
