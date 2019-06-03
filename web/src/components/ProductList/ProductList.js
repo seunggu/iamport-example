@@ -9,15 +9,24 @@ export default class ProductList extends Component {
 
   static propTypes = {
     products: PropTypes.arrayOf(PropTypes.shape({
-      id: PropTypes.string.isRequired,
+      _id: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
       price: PropTypes.number.isRequired,
     })).isRequired,
+    selectedProductId: PropTypes.string.isRequired,
+    onSelect: PropTypes.func.isRequired,
   };
 
   renderProductItems = () => {
-    const { products } = this.props;
-    return products.map(product => <ProductItem key={product.id} product={product} />);
+    const { products, selectedProductId, onSelect } = this.props;
+    return products.map(product =>
+      <ProductItem
+        key={product._id}
+        product={product}
+        selectedProductId={selectedProductId}
+        onSelect={onSelect}
+      />
+    );
   }
 
   render() {

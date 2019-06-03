@@ -7,17 +7,28 @@ export default class ProductItem extends Component {
 
   static propTypes = {
     product: PropTypes.shape({
-      id: PropTypes.string.isRequired,
+      _id: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
       price: PropTypes.number.isRequired,
     }).isRequired,
+    selectedProductId: PropTypes.string.isRequired,
+    onSelect: PropTypes.func.isRequired,
   };
 
+  onRadioChange = () => {
+    const { product, onSelect } = this.props;
+    onSelect(product._id);
+  }
+
   render() {
-    const { product } = this.props;
+    const { product, selectedProductId } = this.props;
     return (
       <div className="product-item-container">
-        <input type="radio" />
+        <input
+          type="radio"
+          checked={product._id === selectedProductId}
+          onChange={this.onRadioChange}
+        />
         <p>{product.name}</p>
         <p>{product.price}원</p>
       </div>

@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import axios from 'axios';
+
 import './App.css';
 
 import ProductList from '../ProductList/ProductList';
@@ -6,34 +8,35 @@ import PaymentButton from '../PaymentButton/PaymentButton';
 
 export default class App extends Component {
 
+  static apiRootURL = 'http://localhost:4000';
+
   constructor(props) {
     super(props);
 
     this.state = {
-      products: [
-        {
-          id: "5cf488d468f44cc37a0fff51",
-          name: "상품1",
-          price: 3000,
-        },
-        {
-          id: "5cf488d468f44cc37a0fff52",
-          name: "상품2",
-          price: 4000,
-        },
-      ],
+      products: [],
+      selectedProductId: '',
     };
   }
 
   componentDidMount() {
-    
+    axios.get(`${App.apiRootURL}/products`)
+      .then(res => this.setState({ products: res.data.result.products }))
+  }
+
+  onProductSelect = selectedProductId => {
+    this.setState({ selectedProductId });
   }
 
   render() {
-    const { products } = this.state;
+    const { products, selectedProductId } = this.state;
     return (
       <div className="App">
-        <ProductList products={products} />
+        <ProductList
+          products={products}
+          selectedProductId={selectedProductId}
+          onSelect={this.onProductSelect}
+        />
         <PaymentButton />
       </div>
     );
