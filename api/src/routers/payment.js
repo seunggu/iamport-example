@@ -1,7 +1,8 @@
 const router = require('express').Router();
 
-router.post('/validation', (req, res) => {
-  res.send('payments');
-});
+const { payments } = require('../controllers');
+
+router.post('/validation', payments.validation);
+router.post('/cancel', payments.cancel);
 
 module.exports = router;
