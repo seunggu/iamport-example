@@ -1,6 +1,6 @@
 const { Iamporter, IamporterError } = require('iamporter');
 
-const config = require('../config');
+const config = require('../../config');
 
 const iamporter = new Iamporter({
   apiKey: config.iamportApiKey,
