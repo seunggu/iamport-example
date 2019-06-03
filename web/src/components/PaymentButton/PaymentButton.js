@@ -59,7 +59,7 @@ export default class PaymentButton extends Component {
   render() {
     return (
       <button
-        className="btn"
+        className="payment-btn"
         onClick={this.onClick}
       >
         결재 요청
