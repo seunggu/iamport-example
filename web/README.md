@@ -83,3 +83,4 @@ IMP.request_pay({
 - [아임포트 인증결제 매뉴얼](https://github.com/iamport/iamport-manual/blob/master/인증결제/README.md)
 - [결제 모듈 데모 버전](https://www.iamport.kr/demo)
 - [인증 결제 전체 Flow](https://github.com/iamport/iamport-manual/blob/master/%EC%9D%B8%EC%A6%9D%EA%B2%B0%EC%A0%9C/background.md)
+- [인증결제 PG사별 샘플](https://github.com/iamport/iamport-manual/tree/master/%EC%9D%B8%EC%A6%9D%EA%B2%B0%EC%A0%9C/sample)
